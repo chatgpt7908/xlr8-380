@@ -40,8 +40,7 @@ Name               : cn
 Certificate:
 ------------
 You can download the LDAP CA certificate from:
-https://raw.githubusercontent.com/anishrana2001/Openshift/refs/heads/main/EX380/ca.crt
-
+https://github.com/chatgpt7908/xlr8-ex380/blob/main/ca.crt
 LDAP URL Format Reference:
 --------------------------
 (Connection Protocol)://(Server name):(port)/(Base DN)?(Query filter)
