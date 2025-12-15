@@ -39,8 +39,8 @@ Name               : cn
 
 Certificate:
 ------------
-You can download the LDAP CA certificate from:
-https://github.com/chatgpt7908/xlr8-ex380/blob/main/ca.crt
+#######You can download the LDAP CA certificate from: ######
+https://github.com/chatgpt7908/xlr8-ex380/raw/refs/heads/main/ca.crt 
 LDAP URL Format Reference:
 --------------------------
 (Connection Protocol)://(Server name):(port)/(Base DN)?(Query filter)
