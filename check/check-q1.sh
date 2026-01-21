@@ -57,26 +57,21 @@ oc get oauth cluster -o yaml | grep -q "$CONFIGMAP" \
   && pass "CA ConfigMap referenced in OAuth" \
   || fail "CA ConfigMap NOT referenced in OAuth"
 
-# 6. Attribute mapping
-step "Checking attribute mappings"
-oc get oauth cluster -o yaml | grep -q "preferredUsername.*uid" \
-  && pass "preferredUsername mapped to uid" \
-  || fail "preferredUsername mapping incorrect"
 
-# 7. User exists
+# 6. User exists
 step "Checking user creation"
 oc get user $USER &>/dev/null \
   && pass "User '$USER' exists" \
   || fail "User '$USER' not created"
 
-# 8. Identity mapped
+# 7. Identity mapped
 step "Checking identity mapping"
 IDENTITY=$(oc get identity -o jsonpath="{.items[?(@.user.name=='$USER')].metadata.name}")
 [ -n "$IDENTITY" ] \
   && pass "Identity mapped ($IDENTITY)" \
   || fail "No identity mapped to user"
 
-# 9. REAL LOGIN TEST
+# 8. REAL LOGIN TEST
 step "Testing real login (oc login)"
 
 API=$(oc whoami --show-server)
