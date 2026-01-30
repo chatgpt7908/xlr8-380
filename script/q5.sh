@@ -45,11 +45,15 @@ Syslog tagging requirements:
   - Application logs: msgID = apps, procID = vector
   - Infrastructure logs: msgID = infra, procID = vector
   - Audit logs: msgID = audit, procID = vector
+  - facility: user
 
 Additional requirements:
   - Use the OpenShift Logging operator
   - Deploy the Event Router to capture Kubernetes events
   - Do NOT modify the syslog server configuration
+
+Images for Eventts:
+registry.ocp4.example.com:8443/openshift-logging/eventrouter-rhel9:v0.4
 
 Verification:
   - Logs must be available on the syslog server under:
